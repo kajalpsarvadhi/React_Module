@@ -15,6 +15,8 @@ import Footer from './pages/Footer'
 
 import { BrowserRouter, Routes, Route, Link, Router } from 'react-router-dom'
 import RecipeFinder from './pages/RecipeFinder'
+import { FormProvider } from './context/FormContext'
+import StepperForm from './pages/StepperForm'
 
 
 
@@ -58,7 +60,8 @@ function App() {
       <Link to="/profile">Profile || </Link>
       <Link to="/hooks">Hooks || </Link>
       <Link to="/renderingList">Rendering List || </Link>
-      <Link to="/recipes">Recipe - Project </Link>
+      <Link to="/recipes">Recipe - Project || </Link>
+      <Link to="/stepper">Stepper Form </Link>
     </nav>
 
     <Routes>
@@ -68,6 +71,12 @@ function App() {
           <Route path="/hooks" element={<HooksPage />} />
           <Route path="/renderingList" element={<ListRender/>} />
           <Route path="/recipes" element={<RecipeFinder/>} />
+          <Route path="/stepper" element={
+            <FormProvider>
+              <StepperForm />
+            </FormProvider>
+            } 
+          />
     </Routes>
     <Footer/>
 
